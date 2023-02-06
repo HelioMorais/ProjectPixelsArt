@@ -1,11 +1,13 @@
 const button = document.getElementById('button-random-color');
-const colors = ['#000000'];
-const corAleatoriaBox = document.querySelectorAll('.color');
+button.addEventListener('click', generateRandomColors);
 
-button.addEventListener('click', () => {
-  const randomColor = getRandomColor();
-  corAleatoriaBox.push(randomColor);
-});
+function generateRandomColors() {
+  const colorBoxes = document.querySelectorAll('.color');
+  colorBoxes[0].style.backgroundColor = 'black';
+  for (let i = 1; i < colorBoxes.length; i += 1) {
+    colorBoxes[i].style.backgroundColor = getRandomColor();
+  }
+}
 
 function getRandomColor() {
   const letters = '0123456789ABCDEF';
