@@ -1,7 +1,9 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
+
 main {
   border: solid black 1px;
   height: 700px;
@@ -10,6 +12,7 @@ main {
   justify-content: center;
   border-radius: 10px;
 }
+
 #title {
   text-align: center;
   border: solid black 1px;
@@ -24,15 +27,48 @@ main {
   margin: 10px;
   float: left;
 }
+
 #color-1 {
   background-color: black;
 }
+
 #color-2 {
   background-color: red;
 }
+
 #color-3 {
   background-color: rgb(0, 114, 253);
 }
+
 #color-4 {
   background-color: rgb(9, 117, 19);
+}
+
+button {
+  margin: 5px;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  display: block;
+  margin-left: 100px;
+  justify-content: center;
+  background: none;
+}
+
+#pixel-board {
+  display: flex;
+  flex-wrap: wrap;
+  width: 200px;
+  height: 200px;
+}
+.pixel {
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff;
+  border: solid black 1px;
+}
+.pixelContent {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0px;
 }
