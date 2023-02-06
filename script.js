@@ -17,3 +17,8 @@ function getRandomColor() {
   }
   return color;
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const blackColorElement = document.querySelector('#color-1');
+  blackColorElement.classList.add('selected');
+});

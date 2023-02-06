@@ -74,6 +74,6 @@ button {
 .pixel {
   width: 40px;
   height: 40px;
-  background-color: #fff;
+  background-color: white;
   border: solid black 1px;
 }
