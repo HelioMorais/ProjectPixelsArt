@@ -43,15 +43,13 @@ for (let i = 0; i < colorPalette.length; i += 1) {
     event.target.classList.add('selected');
   });
 }
-// 10
+// 10 Crie uma função que permita preencher um pixel do quadro com a cor selecionada na paleta de cores.
 const div = document.querySelectorAll('.pixel');
-// console.log(typeof document.getElementsByClassName('selected')[0].style.backgroundColor.value);
 if (document.getElementsByClassName('selected')[0].style.backgroundColor.value == undefined) {
   for (let i = 0; i < colorPalette.length; i += 1) {
     const colorElement = document.getElementsByClassName('color')[i];
     const cssElement = window.getComputedStyle(colorElement);
     colorElement.style.backgroundColor = cssElement.getPropertyValue('background-color');
-    console.log('oi');
   }
 }
 for (const i of div) {
@@ -62,7 +60,7 @@ for (const i of div) {
     event.target.style.backgroundColor = elementColor;
   });
 }
-
+// 11 - Crie um botão que retorne a cor do quadro para a cor inicial.
 const clearButton = document.getElementById('clear-board');
 const pixels = document.querySelectorAll('.pixel');
 
