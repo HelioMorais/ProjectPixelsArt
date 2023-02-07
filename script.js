@@ -1,15 +1,23 @@
+/* eslint-disable func-names */
+/* eslint-disable prefer-arrow-callback */
+/* eslint-disable max-lines-per-function */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-restricted-syntax */
 // 4 - Adicione um botão para gerar cores aleatórias para a paleta de cores.
 
 function getRandomColor() {
   const letters = '0123456789ABCDEF';
   let color = '#';
-  for (let i = 0; i < 6; i += 1) {
+  for (let i = 0; i < 4; i += 1) {
     color += letters[Math.floor(Math.random() * 16)];
   }
   return color;
 }
 
 const button = document.getElementById('button-random-color');
+// eslint-disable-next-line no-use-before-define
 button.addEventListener('click', generateRandomColors);
 
 function generateRandomColors() {
@@ -19,22 +27,47 @@ function generateRandomColors() {
     colorBoxes[i].style.backgroundColor = getRandomColor();
   }
 }
-
 // 8 - Defina a cor preta como cor inicial da paleta de cores
-
-document.addEventListener('DOMContentLoaded', () => {
-  const blackColorElement = document.querySelector('#color-1');
-  blackColorElement.classList.add('selected');
-});
+const blackColorElement = document.querySelector('#color-1');
+blackColorElement.classList.add('selected');
 
 // 9 - Crie uma função para selecionar uma cor na paleta de cores.
 
 const colorPalette = document.querySelectorAll('.color');
 for (let i = 0; i < colorPalette.length; i += 1) {
-  colorPalette[i].addEventListener('click', function () {
+  // eslint-disable-next-line func-names
+  colorPalette[i].addEventListener('click', function (event) {
     for (let j = 0; j < colorPalette.length; j += 1) {
       colorPalette[j].classList.remove('selected');
     }
-    this.classList.add('selected');
+    event.target.classList.add('selected');
   });
 }
+// 10
+const div = document.querySelectorAll('.pixel');
+// console.log(typeof document.getElementsByClassName('selected')[0].style.backgroundColor.value);
+if (document.getElementsByClassName('selected')[0].style.backgroundColor.value == undefined) {
+  for (let i = 0; i < colorPalette.length; i += 1) {
+    const colorElement = document.getElementsByClassName('color')[i];
+    const cssElement = window.getComputedStyle(colorElement);
+    colorElement.style.backgroundColor = cssElement.getPropertyValue('background-color');
+    console.log('oi');
+  }
+}
+for (const i of div) {
+  i.addEventListener('click', (event) => {
+    const elementDiv = document.getElementsByClassName('selected')[0];
+    const elementColor = elementDiv.style.backgroundColor;
+    console.log(elementDiv.style.backgroundColor);
+    event.target.style.backgroundColor = elementColor;
+  });
+}
+
+const clearButton = document.getElementById('clear-board');
+const pixels = document.querySelectorAll('.pixel');
+
+clearButton.addEventListener('click', () => {
+  pixels.forEach((pixel) => {
+    pixel.style.backgroundColor = 'rgb(255, 255, 255)';
+  });
+});
