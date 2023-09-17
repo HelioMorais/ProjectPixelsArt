@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
 main {
@@ -12,13 +13,14 @@ main {
   margin-left: auto;
   margin-right: auto;
   border-radius: 10px;
+  box-shadow: 5px 5px 5px #888888;
 }
 
 #title {
   text-align: center;
-  border: solid black 1px;
   margin: 10px;
   border-radius: 10px;
+  font-size: 40px;
 }
 
 #color-palette {
@@ -41,30 +43,42 @@ main {
 #color-1 {
   background-color: rgb(0, 0, 0);
   border-radius: 50px;
+  box-shadow: 5px 5px 5px #888888;
 }
 
 #color-2 {
-  background-color: rgb(17, 0, 255);
+  background-color: rgb(243, 3, 3);
   border-radius: 50px;
+  box-shadow: 5px 5px 5px #888888;
 }
 
 #color-3 {
-  background-color: rgb(0, 114, 253);
+  background-color: rgb(253, 72, 0);
   border-radius: 50px;
+  box-shadow: 5px 5px 5px #888888;
 }
 
 #color-4 {
-  background-color: rgb(9, 117, 19);
+  background-color: rgb(255, 238, 0);
   border-radius: 50px;
+  box-shadow: 5px 5px 5px #888888;
 }
 
 button {
   margin-top: 30px;
   margin-left: 60px;
   border-radius: 5px;
-  padding: 10px;
+  padding: 7px;
   cursor: pointer;
   background: none;
+  box-shadow: 5px 5px 5px #888888;
+  letter-spacing: 2px;
+}
+
+#clear-board {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 300px;
 }
 
 #pixel-board {

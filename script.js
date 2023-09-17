@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 /* eslint-disable func-names */
 /* eslint-disable prefer-arrow-callback */
 /* eslint-disable max-lines-per-function */
@@ -27,6 +28,7 @@ function generateRandomColors() {
     colorBoxes[i].style.backgroundColor = getRandomColor();
   }
 }
+
 // 8 - Defina a cor preta como cor inicial da paleta de cores
 const blackColorElement = document.querySelector('#color-1');
 blackColorElement.classList.add('selected');
@@ -35,7 +37,6 @@ blackColorElement.classList.add('selected');
 
 const colorPalette = document.querySelectorAll('.color');
 for (let i = 0; i < colorPalette.length; i += 1) {
-  // eslint-disable-next-line func-names
   colorPalette[i].addEventListener('click', function (event) {
     for (let j = 0; j < colorPalette.length; j += 1) {
       colorPalette[j].classList.remove('selected');
@@ -45,7 +46,7 @@ for (let i = 0; i < colorPalette.length; i += 1) {
 }
 // 10 Crie uma função que permita preencher um pixel do quadro com a cor selecionada na paleta de cores.
 const div = document.querySelectorAll('.pixel');
-if (document.getElementsByClassName('selected')[0].style.backgroundColor.value == undefined) {
+if (document.getElementsByClassName('selected')[0].style.backgroundColor.value === undefined) {
   for (let i = 0; i < colorPalette.length; i += 1) {
     const colorElement = document.getElementsByClassName('color')[i];
     const cssElement = window.getComputedStyle(colorElement);
